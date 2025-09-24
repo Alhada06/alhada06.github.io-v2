@@ -4,5 +4,7 @@
     <NuxtWelcome />
   </div>
 
-  <div class="text-3xl font-bold underline">teste deploy automations</div>
+  <div class="text-3xl font-bold underline bg-amber-700">
+    teste deploy automations
+  </div>
 </template>
