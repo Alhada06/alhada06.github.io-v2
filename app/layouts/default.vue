@@ -9,6 +9,12 @@ const coloMode= useColorMode();
    particlesContainer.value = container;
    console.log("trigrred load particles", new Date());
  };
+  // const x = useCssVar(ref("--color-neutral-200"),ref(null));
+
+// console.log("x", x.value, x.value ? oklchToHex(x.value) : undefined);
+// console.log(oklchToHex(useCssVar(ref("--color-neutral-200"),ref(null)).value ?? ""));
+
+
 const options: ISourceOptions = {
   themes: [
     {
@@ -21,10 +27,10 @@ const options: ISourceOptions = {
 
         particles: {
           color: {
-            value: "#ffffff",
+            value: oklchToHex(useCssVar(ref("--color-neutral-100"),ref(null)).value ?? "oklch(0.278078 0.029596 256.848)"),
           },
           links: {
-            color: "#ffffff",
+            color: oklchToHex(useCssVar(ref("--color-neutral-200"),ref(null)).value ?? "oklch(0.278078 0.029596 256.848)"),
           },
         },
       },
@@ -39,10 +45,10 @@ const options: ISourceOptions = {
 
         particles: {
           color: {
-            value: "#1e40af",
+            value: oklchToHex(useCssVar(ref("--color-blue-900"),ref(null)).value ?? "oklch(0.278078 0.029596 256.848)"),
           },
           links: {
-            color: "#1e40af",
+            color: oklchToHex(useCssVar(ref("--color-blue-800"),ref(null)).value ?? "oklch(0.278078 0.029596 256.848)"),
           },
         },
       },
