@@ -9,6 +9,7 @@ const coloMode= useColorMode();
    particlesContainer.value = container;
    console.log("trigrred load particles", new Date());
  };
+
   // const x = useCssVar(ref("--color-neutral-200"),ref(null));
 
 // console.log("x", x.value, x.value ? oklchToHex(x.value) : undefined);
@@ -140,6 +141,7 @@ const options: ISourceOptions = {
         @particles-loaded="particlesLoaded"
       />
     </ClientOnly>
+    <TheHeader />
     <slot />
   </div>
 </template>

@@ -131,7 +131,7 @@
       <div>
         <!-- <NuxtRouteAnnouncer />
       <NuxtWelcome /> -->
-        <UColorModeButton />
+        <!-- <UColorModeButton /> -->
         <!-- <ClientOnly>
         <LazyTheParticles
           id="tsparticles"
