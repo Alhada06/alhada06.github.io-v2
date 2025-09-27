@@ -16,7 +16,14 @@ jobs:
           node-version: "20"
       # Pick your own package manager and build script
       - run: npm install
+        env:
+          NUXT_CONTENTFUL_SPACE: ${{ secrets.NUXT_CONTENTFUL_SPACE }}
+          NUXT_CONTENTFUL_PUBLIC_ACCESS_TOKEN: ${{ secrets.NUXT_CONTENTFUL_PUBLIC_ACCESS_TOKEN }}
+      
       - run: npx nuxt build --preset github_pages
+        env:
+          NUXT_CONTENTFUL_SPACE: ${{ secrets.NUXT_CONTENTFUL_SPACE }}
+          NUXT_CONTENTFUL_PUBLIC_ACCESS_TOKEN: ${{ secrets.NUXT_CONTENTFUL_PUBLIC_ACCESS_TOKEN }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
