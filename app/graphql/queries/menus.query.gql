@@ -1,0 +1,11 @@
+query menuCollectionQuery($locale: String) {
+  menuCollection(locale: $locale) {
+    total
+    items {
+      name
+      sys {
+        id
+      }
+    }
+  }
+}

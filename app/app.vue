@@ -1,5 +1,13 @@
 <script setup lang="ts">
 
+import skillsQuery from "@/graphql/queries/skills.query.gql";
+
+const{data}= useAsyncQuery(skillsQuery,()=>{
+  return {locale: 'pt'};
+  },);
+
+  const skills = computed(() => data.value?.skillCollection?.items || []);
+
 // import type { ISourceOptions, Container } from "@tsparticles/engine";
 
 // const coloMode= useColorMode();
@@ -140,6 +148,7 @@
           @particles-loaded="particlesLoaded"
         />
       </ClientOnly> -->
+        {{ skills }}
       </div>
     </NuxtLayout>
   </UApp>

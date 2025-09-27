@@ -1,0 +1,10 @@
+#import "../fragments/skill.fragment.gql"
+
+query skillCollectionQuery {
+  skillCollection(order: sys_publishedAt_ASC) {
+    total
+    items {
+      ...Skill
+    }
+  }
+}

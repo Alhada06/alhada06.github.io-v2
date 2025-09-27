@@ -1,0 +1,8 @@
+fragment Skill on Skill {
+  sys {
+    id
+  }
+  name
+  icon
+  iconSize
+}

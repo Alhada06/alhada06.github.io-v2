@@ -11,10 +11,38 @@ export default defineNuxtConfig({
     "@nuxt/test-utils",
     "@nuxt/ui",
     "@vueuse/nuxt",
+    "@nuxtjs/apollo",
   ],
   css: ["~/assets/css/main.css"],
   icon: {
     provider: "iconify",
     serverBundle: false,
+  },
+  apollo: {
+    autoImports: true,
+    authType: "Bearer",
+    authHeader: "Authorization",
+    tokenStorage: "cookie",
+    proxyCookies: true,
+    clients: {
+      default: {
+        httpEndpoint:
+          "https://graphql.contentful.com/content/v1/spaces/" +
+          process.env.NUXT_CONTENTFUL_SPACE,
+        httpLinkOptions: {
+          headers: {
+            Authorization: `Bearer ${process.env.NUXT_CONTENTFUL_PUBLIC_ACCESS_TOKEN}`,
+            "Content-Type": "application/json",
+          },
+
+          credentials: "same-origin",
+        },
+        connectToDevTools: false,
+        tokenName: "apollo:diogo-alhada.token",
+        tokenStorage: "cookie",
+        authType: "Bearer",
+        authHeader: "Authorization",
+      },
+    },
   },
 });
