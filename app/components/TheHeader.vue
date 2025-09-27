@@ -31,8 +31,6 @@ nuxtApp.hooks.hookOnce('page:finish', () => {
       <NuxtLink to="/">
         <h1 class="w-auto h-6 shrink-0">DA</h1>
       </NuxtLink>
-
-      <TemplateMenu />
     </template>
 
     <template #right>
@@ -44,12 +42,7 @@ nuxtApp.hooks.hookOnce('page:finish', () => {
     </template>
 
     <template #body>
-      <UNavigationMenu
-        :items="items"
-        orientation="vertical"
-        mode="slideover"
-        class="-mx-2.5"
-      />
+      <UNavigationMenu :items="items" orientation="vertical" class="-mx-2.5" />
       <UButton class="mt-4" label="Download App" variant="subtle" block />
     </template>
   </UHeader>
