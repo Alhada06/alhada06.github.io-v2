@@ -1,6 +1,11 @@
 <script setup lang="ts">
+
+import {en,pt}  from '@nuxt/ui/locale'
 const nuxtApp = useNuxtApp()
 const { activeHeadings, updateHeadings } = useScrollspy()
+
+
+const { locale, setLocale } = useI18n()
 
 const items = computed(() => [{
   label: 'Features',
@@ -37,7 +42,11 @@ nuxtApp.hooks.hookOnce('page:finish', () => {
       <UNavigationMenu :items="items" variant="link" class="hidden lg:block" />
 
       <UButton label="Download App" variant="subtle" class="hidden lg:block" />
-
+      <ULocaleSelect
+        v-model="locale"
+        :locales="Object.values([en, pt])"
+        @update:model-value="setLocale($event)"
+      />
       <UColorModeButton />
     </template>
 

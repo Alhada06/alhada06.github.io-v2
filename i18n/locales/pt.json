@@ -1,0 +1,23 @@
+{
+  "test": "teste",
+  "header": "cabeçalho",
+  "appearance": "Aparência",
+  "language": "Língua",
+  "name": "Nome",
+  "message": "Mensagem",
+  "contact-me": "Contate-me",
+  "send": "Enviar",
+  "successMessage": "E-mail enviado com sucesso!",
+  "errorMessage": " Woops, ocorreu um erro, tente novamente mais tarde!",
+  "certsSection": "Certificados e Diplomas",
+  "about": "Sobre Mim",
+  "skills": "Competências",
+  "projects": "Projetos",
+  "Section 1": "Sobre Mim",
+  "Section 2": "Projetos",
+  "Section 3": "Competências",
+  "Section 4": "Certificados e Diplomas",
+  "Section 5": "Contate-me",
+  "academics": "Formação Académica",
+  "incomplete": "Incompleto "
+}

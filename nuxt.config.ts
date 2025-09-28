@@ -12,6 +12,7 @@ export default defineNuxtConfig({
     "@nuxt/ui",
     "@vueuse/nuxt",
     "@nuxtjs/apollo",
+    "@nuxtjs/i18n",
   ],
   css: ["~/assets/css/main.css"],
   icon: {
@@ -43,6 +44,24 @@ export default defineNuxtConfig({
         authType: "Bearer",
         authHeader: "Authorization",
       },
+    },
+  },
+
+  i18n: {
+    strategy: "no_prefix",
+
+    langDir: "locales",
+    locales: [
+      { code: "en", name: "English", file: "en.json" },
+      { code: "pt", name: "Português", file: "pt.json" },
+    ],
+
+    defaultLocale: "en",
+    detectBrowserLanguage: {
+      useCookie: true,
+      // cookieCrossOrigin: true,
+      cookieKey: "i18n_locale",
+      redirectOn: "root", // recommended
     },
   },
 });

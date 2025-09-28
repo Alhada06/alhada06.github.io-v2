@@ -1,0 +1,23 @@
+{
+  "test": "test",
+  "header": "header",
+  "appearance": "Appearance",
+  "language": "Language",
+  "name": "Name",
+  "message": "Message",
+  "contact-me": "Contact Me",
+  "send": "Send",
+  "successMessage": "Email sent successfully!",
+  "errorMessage": "Oops an error has occurred, please try again later!",
+  "certsSection": "Certificates & Diplomas",
+  "about": "About Me",
+  "skills": "Skills",
+  "projects": "Projects",
+  "Section 1": "About Me",
+  "Section 2": "Projects",
+  "Section 3": "Skills",
+  "Section 4": "Certificates & Diplomas",
+  "Section 5": "Contact Me",
+  "academics": "Academic Background",
+  "incomplete": "Incomplete"
+}

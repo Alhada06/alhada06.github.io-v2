@@ -1,140 +1,22 @@
 <script setup lang="ts">
-
+import  * as locales  from '@nuxt/ui/locale';
 import skillsQuery from "@/graphql/queries/skills.query.gql";
+import aboutQuery from "@/graphql/queries/about.query.gql";
 
+ const {clients} = useApollo();
+const {locale} = useI18n();
 const{data}= useAsyncQuery(skillsQuery,()=>{
-  return {locale: 'pt'};
+  return {locale: locale.value};
   },);
 
   const skills = computed(() => data.value?.skillCollection?.items || []);
 
-// import type { ISourceOptions, Container } from "@tsparticles/engine";
-
-// const coloMode= useColorMode();
-// // console.log(coloMode.value)
-//  const particlesContainer = ref<Container | undefined>(undefined);
-//  const particlesLoaded = (container?: Container) => {
-//     container?.loadTheme(coloMode.value );
-//    particlesContainer.value = container;
-//    console.log("trigrred load particles", new Date());
-//  };
-// const options: ISourceOptions = {
-//   themes: [
-//     {
-//       name: "dark",
-//       default: {
-//         value: true,
-//         mode: "dark",
-//       },
-//       options: {
-
-//         particles: {
-//           color: {
-//             value: "#ffffff",
-//           },
-//           links: {
-//             color: "#ffffff",
-//           },
-//         },
-//       },
-//     },
-//     {
-//       name: "light",
-//       default: {
-//         value: true,
-//         mode: "light",
-//       },
-//       options: {
-
-//         particles: {
-//           color: {
-//             value: "#1e40af",
-//           },
-//           links: {
-//             color: "#1e40af",
-//           },
-//         },
-//       },
-//     },
-//   ],
-
-//   fullScreen: {
-//     enable: true,
-//     zIndex: -1,
-//   },
-//   fpsLimit: 60,
-//   interactivity: {
-//     detectsOn: "window",
-//     events: {
-//       onClick: {
-//         enable: true,
-//         mode: "push",
-//       },
-//       onHover: {
-//         enable: true,
-//         mode: "grab",
-//       },
-//       // resize: true,
-//     },
-//     modes: {
-//       bubble: {
-//         distance: 400,
-//         duration: 2,
-//         opacity: 0.8,
-//         size: 40,
-//       },
-//       push: {
-//         quantity: 4,
-//         duration: 0.2,
-//       },
-//       repulse: {
-//         distance: 200,
-//         duration: 0.4,
-//       },
-//     },
-//   },
-//   particles: {
-//     links: {
-//       distance: 150,
-//       enable: true,
-//       opacity: 0.5,
-//       width: 1,
-//     },
-//     collisions: {
-//       enable: true,
-//     },
-//     move: {
-//       direction: "none",
-//       enable: true,
-//       outModes: "out",
-//       random: false,
-//       speed: 2,
-//       straight: false,
-//     },
-//     number: {
-//       density: {
-//         enable: true,
-//         // value_area: 1000,
-//       },
-//       value: 100,
-//     },
-//     opacity: {
-//       value: 0.5,
-//     },
-//     shape: {
-//       type: "circle",
-//     },
-//     size: {
-//       // random: true,
-//       value: 3,
-//     },
-//   },
-//   detectRetina: true,
-// };
+const {data:aboutData}= useAsyncQuery({query:aboutQuery,variables:{locale:()=>locale.value}});
+  const about = computed(() => aboutData.value?.about?.description);
 </script>
 
 <template>
-  <UApp>
+  <UApp :locale="locales[locale]">
     <NuxtLayout>
       <div>
         <!-- <NuxtRouteAnnouncer />
@@ -148,7 +30,14 @@ const{data}= useAsyncQuery(skillsQuery,()=>{
           @particles-loaded="particlesLoaded"
         />
       </ClientOnly> -->
-        {{ skills }}
+        <div>{{ skills }}</div>
+
+        <div class="p-4 space-y-4">
+          locale:{{ locale}}
+
+          lang change test:{{ $t('test') }}
+        </div>
+        <div class="p-4 space-y-4">about:{{ about}}</div>
       </div>
     </NuxtLayout>
   </UApp>

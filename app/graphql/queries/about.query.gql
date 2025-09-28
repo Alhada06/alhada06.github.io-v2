@@ -1,0 +1,8 @@
+query aboutEntryQuery($locale: String) {
+  about(id: "p2TI7faIa91LgoBfsMSQz", locale: $locale) {
+    sys {
+      id
+    }
+    description
+  }
+}
