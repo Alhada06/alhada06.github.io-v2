@@ -64,4 +64,9 @@ export default defineNuxtConfig({
       redirectOn: "root", // recommended
     },
   },
+  router: {
+    options: {
+      scrollBehaviorType: "smooth",
+    },
+  },
 });

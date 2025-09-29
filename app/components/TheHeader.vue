@@ -14,7 +14,7 @@ const items = computed(() => [{
 }, {
   label: $t('Section 2'),
   to: '#section2',
-  active: activeHeadings.value.includes('section3')
+  active: activeHeadings.value.includes('section2') && !activeHeadings.value.includes('section3')
 }, {
   label: $t('Section 3'),
   to: '#section3',
