@@ -11,10 +11,13 @@ const{data}= useAsyncQuery(skillsQuery,()=>{
 
   const skills = computed(() => data.value?.skillCollection?.items || []);
 
-const {data:aboutData}= useAsyncQuery({query:aboutQuery,variables:{locale:()=>locale.value}});
+const {result:aboutData,loading}= useQuery(aboutQuery,()=>{
+  return {locale: locale.value} ;
+});
+
   const about = computed(() => aboutData.value?.about?.description);
 </script>
-
+\
 <template>
   <UApp :locale="locales[locale]">
     <NuxtLayout>
@@ -37,7 +40,7 @@ const {data:aboutData}= useAsyncQuery({query:aboutQuery,variables:{locale:()=>lo
 
           lang change test:{{ $t('test') }}
         </div>
-        <div class="p-4 space-y-4">about:{{ about}}</div>
+        <div class="p-4 space-y-4">about:{{ about}} loading:{{ loading}}</div>
       </div>
     </NuxtLayout>
   </UApp>
