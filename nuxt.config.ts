@@ -15,10 +15,7 @@ export default defineNuxtConfig({
     "@nuxtjs/i18n",
   ],
   css: ["~/assets/css/main.css"],
-  icon: {
-    provider: "iconify",
-    serverBundle: false,
-  },
+
   apollo: {
     autoImports: true,
     authType: "Bearer",

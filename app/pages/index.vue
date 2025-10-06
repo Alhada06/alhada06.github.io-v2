@@ -1,36 +1,49 @@
 <template>
   <div>
-    <!-- <NuxtRouteAnnouncer />
-      <NuxtWelcome /> -->
-    <!-- <UColorModeButton /> -->
-    <!-- <ClientOnly>
-        <LazyTheParticles
-          id="tsparticles"
-          :options="options"
-          :theme="coloMode.value"
-          @particles-loaded="particlesLoaded"
-        />
-      </ClientOnly> -->
-    <!-- <div>{{ skills }}</div>
-
-        <div class="p-4 space-y-4">
-          locale:{{ locale}}
-
-          lang change test:{{ $t('test') }}
-        </div>
-        <div class="p-4 space-y-4">about:{{ about}} loading:{{ loading}}</div> -->
-
     <UPageSection id="section1" class="w-full h-full">
       <TheAbout />
     </UPageSection>
     <UPageSection id="section2">
-      <TheAbout />
+      <UPageCard
+        variant="outline"
+        spotlight
+        spotlight-color="secondary"
+        orientation="horizontal"
+      >
+        Section 2 ----------------------------------------
+        --------------------------------
+        ---------------------------------------- -
+        ----------------------------------------------
+        --------------------------------------------</UPageCard
+      >
     </UPageSection>
     <UPageSection id="section3">
-      <TheAbout />
+      <UPageCard
+        variant="outline"
+        spotlight
+        spotlight-color="secondary"
+        orientation="horizontal"
+      >
+        Section 3 ----------------------------------------
+        --------------------------------
+        ---------------------------------------- -
+        ----------------------------------------------
+        --------------------------------------------</UPageCard
+      >
     </UPageSection>
     <UPageSection id="section4">
-      <TheAbout />
+      <UPageCard
+        variant="outline"
+        spotlight
+        spotlight-color="secondary"
+        orientation="horizontal"
+      >
+        Section 4 ----------------------------------------
+        --------------------------------
+        ---------------------------------------- -
+        ----------------------------------------------
+        --------------------------------------------</UPageCard
+      >
     </UPageSection>
     <UPageSection id="section5">
       <UPageCard
