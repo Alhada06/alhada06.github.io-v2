@@ -20,7 +20,7 @@
         </div>
         <div class="p-4 space-y-4">about:{{ about}} loading:{{ loading}}</div> -->
 
-    <UPageSection class="w-full h-full" id="1">
+    <UPageSection id="section1" class="w-full h-full">
       <TheAbout />
     </UPageSection>
     <UPageSection id="section2">

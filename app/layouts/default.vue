@@ -178,11 +178,13 @@ const items = computed(() => [{
       <slot />
       <template #left>
         <UPageAside>
-          <UNavigationMenu
-            :items="items"
-            orientation="vertical"
-            variant="link"
-          />
+          <ClientOnly>
+            <UNavigationMenu
+              :items="items"
+              orientation="vertical"
+              variant="link"
+            />
+          </ClientOnly>
         </UPageAside>
       </template>
 

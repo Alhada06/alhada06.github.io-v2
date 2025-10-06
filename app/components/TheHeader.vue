@@ -49,7 +49,13 @@ const items = computed(() => [{
     </template>
 
     <template #right>
-      <UNavigationMenu :items="items" variant="link" class="hidden lg:block" />
+      <ClientOnly>
+        <UNavigationMenu
+          :items="items"
+          variant="link"
+          class="hidden lg:block"
+        />
+      </ClientOnly>
 
       <!-- <UButton label="Download App" variant="subtle" class="hidden lg:block" /> -->
       <ULocaleSelect
@@ -61,7 +67,13 @@ const items = computed(() => [{
     </template>
 
     <template #body>
-      <UNavigationMenu :items="items" orientation="vertical" class="-mx-2.5" />
+      <ClientOnly>
+        <UNavigationMenu
+          :items="items"
+          orientation="vertical"
+          class="-mx-2.5"
+        />
+      </ClientOnly>
       <!-- <UButton class="mt-4" label="Download App" variant="subtle" block /> -->
     </template>
   </UHeader>
