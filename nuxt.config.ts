@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  ssr: false,
   app: {
     baseURL: "/alhada06.github.io-v2/",
   },
@@ -15,6 +16,10 @@ export default defineNuxtConfig({
     "@nuxtjs/i18n",
   ],
   css: ["~/assets/css/main.css"],
+  icon: {
+    provider: "iconify",
+    serverBundle: false,
+  },
 
   apollo: {
     autoImports: true,
