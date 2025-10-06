@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { ISourceOptions, Container } from "@tsparticles/engine";
-const nuxtApp = useNuxtApp()
-const { activeHeadings, updateHeadings } = useScrollspy()
+// const nuxtApp = useNuxtApp()
+// const { activeHeadings, updateHeadings } = useScrollspy()
 const coloMode= useColorMode();
 // console.log(coloMode.value)
  const particlesContainer = ref<Container | undefined>(undefined);
@@ -134,33 +134,33 @@ const options: ISourceOptions = {
 const items = computed(() => [{
   label: $t('Section 1'),
   to: '#section1',
-  active: activeHeadings.value.includes('section1') && !activeHeadings.value.includes('section2')
+  active:false
 }, {
   label: $t('Section 2'),
   to: '#section2',
-  active: activeHeadings.value.includes('section2') && !activeHeadings.value.includes('section3')
+  active: false
 }, {
   label: $t('Section 3'),
   to: '#section3',
-  active: activeHeadings.value.includes('section3') && !activeHeadings.value.includes('section4')
+  active: false
 }, {
   label: $t('Section 4'),
   to: '#section4',
-  active: activeHeadings.value.includes('section4') && !activeHeadings.value.includes('section5')
+  active: false
 }, {
   label: $t('Section 5'),
   to: '#section5',
-  active: activeHeadings.value.includes('section5') && !activeHeadings.value.includes('section6')
+  active: false
 },])
-nuxtApp.hooks.hookOnce('page:finish', () => {
-  updateHeadings([
-    document.querySelector('#section1'),
-    document.querySelector('#section2'),
-    document.querySelector('#section3'),
-    document.querySelector('#section4'),
-    document.querySelector('#section5'),
-  ].filter(Boolean) as Element[])
-})
+// nuxtApp.hooks.hookOnce('page:finish', () => {
+//   updateHeadings([
+//     document.querySelector('#section1'),
+//     document.querySelector('#section2'),
+//     document.querySelector('#section3'),
+//     document.querySelector('#section4'),
+//     document.querySelector('#section5'),
+//   ].filter(Boolean) as Element[])
+// })
 </script>
 
 <template>
