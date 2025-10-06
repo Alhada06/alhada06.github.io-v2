@@ -1,0 +1,9 @@
+#import "../fragments/project.fragment.gql"
+
+query projectCollectionQuery($locale: String) {
+  projectCollection(locale: $locale, order: name_ASC) {
+    items {
+      ...Project
+    }
+  }
+}

@@ -1,0 +1,21 @@
+fragment Project on Project {
+  sys {
+    id
+  }
+  name
+  description
+  ghUrl
+  image {
+    sys {
+      id
+    }
+    title
+    url
+  }
+  stackCollection {
+    items {
+      name
+      icon
+    }
+  }
+}

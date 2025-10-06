@@ -1,0 +1,14 @@
+query academicsCollectionQuery($locale: String) {
+  academicsCollection(order: order_ASC, locale: $locale) {
+    total
+    items {
+      sys {
+        id
+      }
+      school
+      course
+      incomplete
+      precentage
+    }
+  }
+}

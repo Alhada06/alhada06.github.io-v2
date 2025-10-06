@@ -1,0 +1,9 @@
+query experienceEntryQuery {
+  experienceCollection {
+    total
+    items {
+      name
+      precentage
+    }
+  }
+}

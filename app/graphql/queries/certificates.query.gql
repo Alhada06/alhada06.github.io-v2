@@ -1,0 +1,11 @@
+#import "../fragments/certificate.fragment.gql"
+
+query certificateCollectionQuery($locale: String) {
+  certificateCollection(locale: $locale, order: date_DESC) {
+    total
+    items {
+      ...Certificate
+      # add the fields you want to query
+    }
+  }
+}
