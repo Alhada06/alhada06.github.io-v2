@@ -1,7 +1,7 @@
 <template>
   <div>
     <UPageSection id="section1" ref="section1" class="w-full h-full">
-      <!-- <TheAbout /> -->
+      <TheAbout />
     </UPageSection>
     <UPageSection id="section2" ref="section2" class="w-full h-full">
       Section 2 ----------------------------------------

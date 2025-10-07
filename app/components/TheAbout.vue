@@ -1,7 +1,7 @@
 <template>
   <UPageCard
     variant="outline"
-    :title="t('about')"
+    title="About Me"
     :description="about"
     orientation="vertical"
   />
@@ -9,7 +9,7 @@
 
 <script lang="ts" setup>
 import aboutQuery from "@/graphql/queries/about.query.gql";
- const {locale,t} = useI18n();
+ const {locale} = useI18n();
 
 console.log(locale.value);
 
