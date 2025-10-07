@@ -1,10 +1,12 @@
 <template>
-  <UPageCard
-    variant="outline"
-    title="About Me"
-    :description="about"
-    orientation="vertical"
-  />
+  <ClientOnly>
+    <UPageCard
+      variant="outline"
+      title="About Me"
+      :description="about"
+      orientation="vertical"
+    />
+  </ClientOnly>
 </template>
 
 <script lang="ts" setup>
