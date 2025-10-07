@@ -1,5 +1,6 @@
 import { tsParticles } from "@tsparticles/engine";
-import { loadFull } from "tsparticles";
+// import { loadFull } from "tsparticles";
+import { loadSlim } from "@tsparticles/slim";
 export default defineNuxtPlugin(async () => {
-  await loadFull(tsParticles);
+  await loadSlim(tsParticles);
 });
