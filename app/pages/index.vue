@@ -6,9 +6,8 @@
     <UPageSection id="section2" ref="section2" class="w-full h-full">
       <UPageCard
         variant="outline"
-        spotlight
-        spotlight-color="secondary"
-        orientation="horizontal"
+     
+       
       >
         Section 2 ----------------------------------------
         -------------------------------- test if compile live prod 2
@@ -18,7 +17,7 @@
       >
     </UPageSection>
     <UPageSection id="section3" ref="section3" class="w-full h-full">
-      <UPageCard variant="outline" spotlight spotlight-color="secondary">
+      <UPageCard variant="outline" >
         Section 3 ----------------------------------------
         --------------------------------
         ---------------------------------------- -
@@ -27,7 +26,7 @@
       >
     </UPageSection>
     <UPageSection id="section4" ref="section4" class="w-full h-full">
-      <UPageCard variant="outline" spotlight spotlight-color="secondary">
+      <UPageCard variant="outline" ">
         Section 4 ----------------------------------------
         --------------------------------
         ---------------------------------------- -

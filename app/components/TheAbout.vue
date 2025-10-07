@@ -3,8 +3,6 @@
     variant="outline"
     :title="t('about')"
     :description="about"
-    spotlight
-    spotlight-color="secondary"
     orientation="vertical"
   />
 </template>
