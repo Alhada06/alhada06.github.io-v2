@@ -2,6 +2,7 @@
 import type { ISourceOptions, Container } from "@tsparticles/engine";
 // const nuxtApp = useNuxtApp()
 // const { activeHeadings, updateHeadings } = useScrollspy()
+const { t } = useI18n();
 const coloMode= useColorMode();
 // console.log(coloMode.value)
  const particlesContainer = ref<Container | undefined>(undefined);
@@ -132,23 +133,23 @@ const options: ISourceOptions = {
 };
 
 const items = computed(() => [{
-  label: $t('Section 1'),
+  label: t('Section 1'),
   to: '#section1',
   active:false
 }, {
-  label: $t('Section 2'),
+  label: t('Section 2'),
   to: '#section2',
   active: false
 }, {
-  label: $t('Section 3'),
+  label: t('Section 3'),
   to: '#section3',
   active: false
 }, {
-  label: $t('Section 4'),
+  label: t('Section 4'),
   to: '#section4',
   active: false
 }, {
-  label: $t('Section 5'),
+  label: t('Section 5'),
   to: '#section5',
   active: false
 },])
