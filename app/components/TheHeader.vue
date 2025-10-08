@@ -7,27 +7,27 @@ import {en,pt}  from '@nuxt/ui/locale'
 
 const { locale, setLocale ,t} = useI18n()
 
-// const items = computed(() => [{
-//   label: t('Section 1'),
-//   to: '#section1',
-//   active: false
-// }, {
-//   label: t('Section 2'),
-//   to: '#section2',
-//   active: false
-// }, {
-//   label: t('Section 3'),
-//   to: '#section3',
-//   active: false
-// }, {
-//   label: t('Section 4'),
-//   to: '#section4',
-//   active: false
-// }, {
-//   label: t('Section 5'),
-//   to: '#section5',
-//   active: false
-// },])
+const items = computed(() => [{
+  label: t('Section 1'),
+  to: '#section1',
+  active: false
+}, {
+  label: t('Section 2'),
+  to: '#section2',
+  active: false
+}, {
+  label: t('Section 3'),
+  to: '#section3',
+  active: false
+}, {
+  label: t('Section 4'),
+  to: '#section4',
+  active: false
+}, {
+  label: t('Section 5'),
+  to: '#section5',
+  active: false
+},])
 
 // nuxtApp.hooks.hookOnce('page:finish', () => {
 //   updateHeadings([
@@ -49,13 +49,7 @@ const { locale, setLocale ,t} = useI18n()
     </template>
 
     <template #right>
-      <!-- <ClientOnly>
-        <UNavigationMenu
-          :items="items"
-          variant="link"
-          class="hidden lg:block"
-        />
-      </ClientOnly> -->
+      <UNavigationMenu :items="items" variant="link" class="hidden lg:block" />
 
       <!-- <UButton label="Download App" variant="subtle" class="hidden lg:block" /> -->
       <ULocaleSelect
@@ -67,13 +61,8 @@ const { locale, setLocale ,t} = useI18n()
     </template>
 
     <template #body>
-      <!-- <ClientOnly>
-        <UNavigationMenu
-          :items="items"
-          orientation="vertical"
-          class="-mx-2.5"
-        />
-      </ClientOnly> -->
+      <UNavigationMenu :items="items" orientation="vertical" class="-mx-2.5" />
+
       <!-- <UButton class="mt-4" label="Download App" variant="subtle" block /> -->
     </template>
   </UHeader>

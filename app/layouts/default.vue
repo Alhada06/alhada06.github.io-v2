@@ -132,27 +132,27 @@ const options: ISourceOptions = {
   detectRetina: true,
 };
 
-// const items = computed(() => [{
-//   label: t('Section 1'),
-//   to: '#section1',
-//   active:false
-// }, {
-//   label: t('Section 2'),
-//   to: '#section2',
-//   active: false
-// }, {
-//   label: t('Section 3'),
-//   to: '#section3',
-//   active: false
-// }, {
-//   label: t('Section 4'),
-//   to: '#section4',
-//   active: false
-// }, {
-//   label: t('Section 5'),
-//   to: '#section5',
-//   active: false
-// },])
+const items = computed(() => [{
+  label: t('Section 1'),
+  to: '#section1',
+  active:false
+}, {
+  label: t('Section 2'),
+  to: '#section2',
+  active: false
+}, {
+  label: t('Section 3'),
+  to: '#section3',
+  active: false
+}, {
+  label: t('Section 4'),
+  to: '#section4',
+  active: false
+}, {
+  label: t('Section 5'),
+  to: '#section5',
+  active: false
+},])
 // nuxtApp.hooks.hookOnce('page:finish', () => {
 //   updateHeadings([
 //     document.querySelector('#section1'),
@@ -179,13 +179,11 @@ const options: ISourceOptions = {
       <slot />
       <template #left>
         <UPageAside>
-          <!-- <ClientOnly>
-            <UNavigationMenu
-              :items="items"
-              orientation="vertical"
-              variant="link"
-            />
-          </ClientOnly> -->
+          <UNavigationMenu
+            :items="items"
+            orientation="vertical"
+            variant="link"
+          />
         </UPageAside>
       </template>
 
