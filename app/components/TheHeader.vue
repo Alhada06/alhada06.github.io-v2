@@ -29,6 +29,8 @@ const items = computed(() => [{
   active: false
 },])
 
+
+
 // nuxtApp.hooks.hookOnce('page:finish', () => {
 //   updateHeadings([
 //     document.querySelector('#section1'),

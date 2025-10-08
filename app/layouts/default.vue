@@ -3,13 +3,13 @@ import type { ISourceOptions, Container } from "@tsparticles/engine";
 // const nuxtApp = useNuxtApp()
 // const { activeHeadings, updateHeadings } = useScrollspy()
 const { t } = useI18n();
-const coloMode= useColorMode();
+const colorMode= useColorMode();
 // console.log(coloMode.value)
  const particlesContainer = ref<Container | undefined>(undefined);
  const particlesLoaded = (container?: Container) => {
-    container?.loadTheme(coloMode.value );
+    container?.loadTheme(colorMode.value );
    particlesContainer.value = container;
-   console.log("trigrred load particles", new Date());
+  //  console.log("trigrred load particles", new Date());
  };
 
   // const x = useCssVar(ref("--color-neutral-200"),ref(null));
@@ -170,8 +170,7 @@ const items = computed(() => [{
       <LazyTheParticles
         id="tsparticles"
         :options="options"
-        :theme="coloMode.value"
-        @particles-loaded="particlesLoaded"
+        :theme="colorMode.value"
       />
     </ClientOnly>
     <TheHeader />
