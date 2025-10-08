@@ -13,7 +13,7 @@
 import aboutQuery from "@/graphql/queries/about.query.gql";
  const {locale,t} = useI18n();
 
-console.log(locale.value);
+// console.log(locale.value);
 
 
  const variable = computed(() => ({locale: locale.value}));
