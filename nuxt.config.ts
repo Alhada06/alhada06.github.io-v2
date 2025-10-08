@@ -58,6 +58,7 @@ export default defineNuxtConfig({
     ],
 
     defaultLocale: "en",
+
     detectBrowserLanguage: {
       useCookie: true,
       // cookieCrossOrigin: true,

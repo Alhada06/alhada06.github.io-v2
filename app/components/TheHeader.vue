@@ -59,7 +59,7 @@ const { locale, setLocale ,t} = useI18n()
 
       <!-- <UButton label="Download App" variant="subtle" class="hidden lg:block" /> -->
       <ULocaleSelect
-        v-model="locale"
+        :model-value="locale"
         :locales="Object.values([en, pt])"
         @update:model-value="setLocale($event)"
       />
