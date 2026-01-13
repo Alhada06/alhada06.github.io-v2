@@ -71,4 +71,5 @@ export default defineNuxtConfig({
       scrollBehaviorType: "smooth",
     },
   },
+  fonts: { provider: "none" },
 });
