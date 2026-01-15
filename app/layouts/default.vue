@@ -132,36 +132,44 @@ const options: ISourceOptions = {
   detectRetina: true,
 };
 
+const nuxtApp = useNuxtApp()
+ const { activeHeadings, updateHeadings } = useScrollSpy({ rootMargin: "0px 0px -80% 0px" })
+
+
+
 const items = computed(() => [{
   label: t('Section 1'),
   to: '#section1',
-  active:false
+  active: activeHeadings.value.includes('section1') && !activeHeadings.value.includes('section2')
 }, {
   label: t('Section 2'),
   to: '#section2',
-  active: false
+  active: activeHeadings.value.includes('section2') && !activeHeadings.value.includes('section3')
 }, {
   label: t('Section 3'),
   to: '#section3',
-  active: false
+  active: activeHeadings.value.includes('section3') && !activeHeadings.value.includes('section4')
 }, {
   label: t('Section 4'),
   to: '#section4',
-  active: false
+  active: activeHeadings.value.includes('section4') && !activeHeadings.value.includes('section5')
 }, {
   label: t('Section 5'),
   to: '#section5',
-  active: false
+  active: activeHeadings.value.includes('section5') && !activeHeadings.value.includes('section4')
 },])
-// nuxtApp.hooks.hookOnce('page:finish', () => {
-//   updateHeadings([
-//     document.querySelector('#section1'),
-//     document.querySelector('#section2'),
-//     document.querySelector('#section3'),
-//     document.querySelector('#section4'),
-//     document.querySelector('#section5'),
-//   ].filter(Boolean) as Element[])
-// })
+
+
+
+nuxtApp.hooks.hookOnce('page:finish', () => {
+  updateHeadings([
+    document.querySelector('#section1'),
+    document.querySelector('#section2'),
+    document.querySelector('#section3'),
+    document.querySelector('#section4'),
+    document.querySelector('#section5'),
+  ].filter(Boolean) as Element[])
+})
 </script>
 
 <template>
@@ -173,10 +181,9 @@ const items = computed(() => [{
         :theme="colorMode.value"
       />
     </ClientOnly>
-    <TheHeader />
+    <TheHeader :items="items" />
     <UPage>
-      <slot />
-      <template #left>
+      <!-- <template #left>
         <UPageAside>
           <UNavigationMenu
             :items="items"
@@ -184,9 +191,9 @@ const items = computed(() => [{
             variant="link"
           />
         </UPageAside>
-      </template>
-
-      <template #right />
+      </template> -->
+      <slot />
+      <!-- <template #right /> -->
     </UPage>
   </div>
 </template>

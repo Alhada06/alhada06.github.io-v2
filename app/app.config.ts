@@ -5,6 +5,5 @@ export default defineAppConfig({
       secondary: "purple",
       neutral: "slate",
     },
-   
   },
 });

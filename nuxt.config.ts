@@ -72,4 +72,9 @@ export default defineNuxtConfig({
     },
   },
   fonts: { provider: "none" },
+  // nitro: {
+  //   prerender: {
+  //     routes: ["/"],
+  //   },
+  // },
 });

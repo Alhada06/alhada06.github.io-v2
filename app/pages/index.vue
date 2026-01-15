@@ -31,6 +31,9 @@
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const tempRef= useTemplateRefsList<Element>()
+console.log('tempRef index',tempRef.value)
+</script>
 
 <style></style>
