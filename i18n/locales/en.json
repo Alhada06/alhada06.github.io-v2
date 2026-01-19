@@ -19,5 +19,7 @@
   "Section 4": "Certificates & Diplomas",
   "Section 5": "Contact Me",
   "academics": "Academic Background",
-  "incomplete": "Incomplete"
+  "incomplete": "Incomplete",
+  "required": "This field is required!",
+  "invalid-email": "Invalid email"
 }

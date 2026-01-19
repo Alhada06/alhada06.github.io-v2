@@ -8,6 +8,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   modules: [
+    "@regle/nuxt",
     "@nuxt/eslint",
     "@nuxt/test-utils",
     "@nuxt/ui",
@@ -15,6 +16,7 @@ export default defineNuxtConfig({
     "@nuxtjs/apollo",
     "@nuxtjs/i18n",
   ],
+  regle: { setupFile: "~/regle-config.ts" },
   css: ["~/assets/css/main.css"],
   icon: {
     provider: "iconify",

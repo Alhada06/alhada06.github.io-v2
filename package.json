@@ -15,6 +15,9 @@
     "@nuxt/ui": "^4.3.0",
     "@nuxtjs/apollo": "^5.0.0-alpha.15",
     "@nuxtjs/i18n": "^10.2.1",
+    "@regle/core": "^1.17.0",
+    "@regle/nuxt": "^1.17.0",
+    "@regle/rules": "^1.17.0",
     "@vue/apollo-composable": "^4.2.2",
     "@vueuse/nuxt": "^14.1.0",
     "eslint": "^9.39.2",
@@ -22,11 +25,11 @@
     "nuxt": "^4.2.2",
     "tsparticles": "^3.9.1",
     "typescript": "^5.9.3",
-    "vue": "^3.5.26",
+    "vue": "^3.5.27",
     "vue-router": "^4.6.4"
   },
   "devDependencies": {
-    "@iconify-json/lucide": "^1.2.84",
-    "@types/node": "^25.0.8"
+    "@iconify-json/lucide": "^1.2.86",
+    "@types/node": "^25.0.9"
   }
 }
