@@ -9,13 +9,14 @@ import type { FormSubmitEvent } from '@nuxt/ui'
     required: withMessage(required, ()=>$t('required')),
   })
  });
-const { r$ } = useRegle({ email: '', password: '' }, {
-  email: { required, email: withMessage(email, $t('invalid-email')) },
-  password: { required, minLength: withMessage(minLength(8), 'Must be at least 8 characters') }
+const { r$ } = useRegle({ email: '', message: '', name: '' }, {
+  name: { required, minLength:withMessage(minLength(3), ()=>$t('min-length', { num: 3 }))},
+  email: { required, email: withMessage(email, ()=>$t('invalid-email')) },
+  message: { required, minLength: withMessage(minLength(10), ()=>$t('min-length', { num: 10 })) }
 })
 
 type Schema = InferInput<typeof r$>
-  console.log(r$)
+  // console.log(r$)
 
 const toast = useToast()
 async function onSubmit(event: FormSubmitEvent<Schema>) {
@@ -31,17 +32,27 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
     :description="$t('contact-me')"
     orientation="vertical"
   >
-    <UForm :schema="r$" :state="r$.$value" class="space-y-4" @submit="onSubmit">
-      <UFormField label="Email" name="email">
-        <UInput v-model="r$.$value.email" />
-      </UFormField>
+    <div class="flex flex-row justify-center w-full">
+      <UForm
+        :schema="r$"
+        :state="r$.$value"
+        class="space-y-4"
+        @submit="onSubmit"
+      >
+        <UFormField :label="$t('name')" name="name">
+          <UInput v-model="r$.$value.name" />
+        </UFormField>
+        <UFormField label="Email" name="email">
+          <UInput v-model="r$.$value.email" />
+        </UFormField>
 
-      <UFormField label="Password" name="password">
-        <UInput v-model="r$.$value.password" type="password" />
-      </UFormField>
+        <UFormField :label="$t('message')" name="message">
+          <UTextarea v-model="r$.$value.message" autoresize />
+        </UFormField>
 
-      <UButton type="submit"> {{ t('send') }} </UButton>
-    </UForm>
+        <UButton type="submit"> {{ t('send') }} </UButton>
+      </UForm>
+    </div>
   </UPageCard>
 </template>
 

@@ -21,5 +21,6 @@
   "academics": "Formação Académica",
   "incomplete": "Incompleto ",
   "required": "Este campo é obrigatório",
-  "invalid-email": "Email inválido"
+  "invalid-email": "Email inválido",
+  "min-length": "Deve ter pelo menos {num} caracteres"
 }

@@ -21,5 +21,6 @@
   "academics": "Academic Background",
   "incomplete": "Incomplete",
   "required": "This field is required!",
-  "invalid-email": "Invalid email"
+  "invalid-email": "Invalid email",
+  "min-length": "Must be at least {num} characters"
 }
