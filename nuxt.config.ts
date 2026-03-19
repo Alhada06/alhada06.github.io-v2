@@ -73,10 +73,25 @@ export default defineNuxtConfig({
       scrollBehaviorType: "smooth",
     },
   },
-  fonts: { provider: "none" },
+  // fonts: { provider: "none" },
+  fonts: {
+    provider: "google",
+  },
   // nitro: {
   //   prerender: {
   //     routes: ["/"],
   //   },
   // },
+  vite: {
+    optimizeDeps: {
+      include: [
+        "@vue/devtools-core",
+        "@vue/devtools-kit",
+        "@tsparticles/engine",
+        "@tsparticles/slim",
+        "@regle/core",
+        "@regle/rules",
+      ],
+    },
+  },
 });
