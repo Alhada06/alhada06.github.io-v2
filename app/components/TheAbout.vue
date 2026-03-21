@@ -10,13 +10,13 @@
 </template>
 
 <script lang="ts" setup>
-import aboutQuery from "@/graphql/queries/about.query.gql";
- const {locale,t} = useI18n();
+  import aboutQuery from "@/graphql/queries/about.query.gql";
+  const { locale, t } = useI18n();
 
-// console.log(locale.value);
+  // console.log(locale.value);
 
-
- const variable = computed(() => ({locale: locale.value}));
-const {result:aboutData}=  useQuery(aboutQuery,variable);
-const about = computed(() => aboutData.value?.about?.description);
+  const variable = computed(() => ({ locale: locale.value }));
+  // const {result:aboutData}=  useQuery(aboutQuery,variable);
+  const { data: aboutData } = useAsyncQuery(aboutQuery, variable);
+  const about = computed(() => aboutData.value?.about?.description);
 </script>
