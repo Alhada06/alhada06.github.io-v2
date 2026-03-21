@@ -1,28 +1,58 @@
 <script setup lang="ts">
-  import {  type InferInput,defineRegleConfig } from '@regle/core'
-import { required, email, minLength, withMessage } from '@regle/rules'
-import type { FormSubmitEvent } from '@nuxt/ui'
+  import { type InferInput, defineRegleConfig } from "@regle/core";
+  import { required, email, minLength, withMessage } from "@regle/rules";
+  import type { FormSubmitEvent } from "@nuxt/ui";
 
- const { t } = useI18n();
- const{useRegle}=defineRegleConfig({
-  rules: ()=>({
-    required: withMessage(required, ()=>$t('required')),
-  })
- });
-const { r$ } = useRegle({ email: '', message: '', name: '' }, {
-  name: { required, minLength:withMessage(minLength(3), ()=>$t('min-length', { num: 3 }))},
-  email: { required, email: withMessage(email, ()=>$t('invalid-email')) },
-  message: { required, minLength: withMessage(minLength(10), ()=>$t('min-length', { num: 10 })) }
-})
+  const { t, locale } = useI18n();
+  const { useRegle } = defineRegleConfig({
+    rules: () => ({
+      required: withMessage(required, () => $t("required")),
+    }),
+  });
+  const { r$ } = useRegle(
+    { email: "", message: "", name: "" },
+    {
+      name: {
+        required,
+        minLength: withMessage(minLength(3), () =>
+          $t("min-length", { num: 3 }),
+        ),
+      },
+      email: { required, email: withMessage(email, () => $t("invalid-email")) },
+      message: {
+        required,
+        minLength: withMessage(minLength(10), () =>
+          $t("min-length", { num: 10 }),
+        ),
+      },
+    },
+  );
+  const form = useTemplateRef("form");
+  watch(locale, () => {
+    if (!r$.$dirty) return;
 
-type Schema = InferInput<typeof r$>
+    form.value?.validate({
+      name: form.value?.errors.map((e) => e.name) as (
+        | "email"
+        | "message"
+        | "name"
+      )[],
+      silent: true,
+    });
+  });
+
+  type Schema = InferInput<typeof r$>;
   // console.log(r$)
 
-const toast = useToast()
-async function onSubmit(event: FormSubmitEvent<Schema>) {
-  toast.add({ title: 'Success', description: 'The form has been submitted.', color: 'success' })
-  console.log(event.data)
-}
+  const toast = useToast();
+  async function onSubmit(event: FormSubmitEvent<Schema>) {
+    toast.add({
+      title: "Success",
+      description: "The form has been submitted.",
+      color: "success",
+    });
+    console.log(event.data);
+  }
 </script>
 
 <template>
@@ -34,6 +64,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
   >
     <div class="flex flex-row justify-center w-full">
       <UForm
+        ref="form"
         :schema="r$"
         :state="r$.$value"
         class="space-y-4"
@@ -50,7 +81,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
           <UTextarea v-model="r$.$value.message" autoresize />
         </UFormField>
 
-        <UButton type="submit"> {{ t('send') }} </UButton>
+        <UButton type="submit"> {{ t("send") }} </UButton>
       </UForm>
     </div>
   </UPageCard>
